@@ -1,0 +1,95 @@
+{
+  "name": "s3-cli-browser",
+  "displayName": "S3 CLI Browser",
+  "description": "Browse a given S3 bucket/prefix using the aws CLI, download-on-click and open files.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "main": "./extension.js",
+  "scripts": {
+    "package": "vsce package"
+  },
+  "publisher": "you",
+  "categories": ["Other"],
+  "activationEvents": [
+    "onView:s3CliBrowser",
+    "onCommand:s3CliBrowser.refresh",
+    "onCommand:s3CliBrowser.openFile",
+    "onCommand:s3CliBrowser.openInExplorer",
+    "onCommand:s3CliBrowser.showPath"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "S3 CLI Browser",
+      "properties": {
+        "s3CliBrowser.bucket": {
+          "type": "string",
+          "default": "",
+          "description": "Name of the S3 bucket to browse."
+        },
+        "s3CliBrowser.prefix": {
+          "type": "string",
+          "default": "",
+          "description": "Optional base prefix (folder) inside the bucket."
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "s3CliBrowser",
+          "name": "S3 CLI Browser" 
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "s3CliBrowser.refresh",
+        "title": "Refresh"
+      },
+      {
+        "command": "s3CliBrowser.openFile",
+        "title": "Open File"
+      },
+      {
+        "command": "s3CliBrowser.openInExplorer",
+        "title": "Open In OS Explorer"
+      },
+      {
+        "command": "s3CliBrowser.showPath",
+        "title": "Show File Path"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "s3CliBrowser.refresh",
+          "when": "view == s3CliBrowser",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "s3CliBrowser.showPath",
+          "when": "view == s3CliBrowser && viewItem == s3Item",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "s3CliBrowser.showPath",
+          "when": "resourceFilename",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "s3CliBrowser",
+        "contents": "Set **s3CliBrowser.bucket** in Settings to start browsing.\n[Refresh](command:s3CliBrowser.refresh)"
+      }
+    ]
+  },
+  "dependencies": {}
+}
