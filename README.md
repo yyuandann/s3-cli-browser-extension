@@ -1,6 +1,6 @@
 # S3 CLI Browser
 
-A tiny VS Code extension that lists an S3 bucket/prefix using the `aws` CLI (no permanent keys required).
+A tiny VS Code extension that lists an S3 bucket/folder using the `aws` CLI for use in Code Ocean.
 Configure with settings:
 - `s3CliBrowser.bucket` e.g. `pga-genomics-wg-802451596237-us-west-2`
 - `s3CliBrowser.prefix` e.g. `dyuan/` (optional)
