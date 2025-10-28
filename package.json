@@ -75,13 +75,6 @@
           "when": "view == s3CliBrowser && viewItem == s3Item",
           "group": "navigation"
         }
-      ],
-      "explorer/context": [
-        {
-          "command": "s3CliBrowser.showPath",
-          "when": "resourceFilename",
-          "group": "navigation"
-        }
       ]
     },
     "viewsWelcome": [
