@@ -160,7 +160,8 @@ async function activate(context) {
 
     // Updated showPath command with debugging
     context.subscriptions.push(vscode.commands.registerCommand('s3CliBrowser.showPath', async (node) => {
-        console.log('showPath called with node:', JSON.stringify(node, null, 2));
+        console.log('showPath called with node:', node ? { label: node.label, key: node.key, bucket: node.bucket, isFolder: node.isFolder } : 'undefined');
+        // console.log('showPath called with node:', JSON.stringify(node, null, 2));
         if (!node || !node.bucket || !node.key) {
             console.log('Invalid node, cannot show path. Node:', node);
             vscode.window.showErrorMessage('No S3 item selected.');
