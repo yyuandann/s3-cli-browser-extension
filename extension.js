@@ -169,7 +169,8 @@ async function activate(context) {
         }
         const filePath = `s3://${node.bucket}/${node.key}`;
         await vscode.env.clipboard.writeText(filePath);
-        vscode.window.showInformationMessage(`S3 Path copied: ${filePath}`);
+        // vscode.window.showInformationMessage(`S3 Path copied: ${filePath}`);
+        vscode.window.showInformationMessage(`S3 Path copied to clipboard.`);
         const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
         statusBar.text = `$(file-code) ${path.basename(node.key)}`;
         statusBar.tooltip = filePath;

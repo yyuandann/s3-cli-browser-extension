@@ -5,4 +5,5 @@ Configure with settings:
 - `s3CliBrowser.bucket` e.g. `pga-genomics-wg-802451596237-us-west-2`
 - `s3CliBrowser.prefix` e.g. `dyuan/` (optional)
 
-Click folders to expand one level; click a file to download to `/tmp/s3_browser/...` and open it in the editor.
+Left click folders to expand one level; Left click a file to download to `/tmp/s3_browser/...` and open it in the editor.
+Right click and select `Copy Path` to copy the S3 path.

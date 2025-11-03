@@ -58,7 +58,7 @@
       },
       {
         "command": "s3CliBrowser.showPath",
-        "title": "Show File Path"
+        "title": "Copy Path"
       }
     ],
     "menus": {
